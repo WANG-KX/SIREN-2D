@@ -30,5 +30,24 @@ python 2.7
 
 ## Reference
 
-Implicit Neural Representations with Periodic Activation Functions, arXiv 2006.09661
-NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis, arXiv:2003.08934
+
+```
+@misc{mildenhall2020nerf,
+    title={NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis},
+    author={Ben Mildenhall and Pratul P. Srinivasan and Matthew Tancik and Jonathan T. Barron and Ravi Ramamoorthi and Ren Ng},
+    year={2020},
+    eprint={2003.08934},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
+
+
+@misc{mildenhall2020nerf,
+    title={Implicit Neural Representations with Periodic Activation Functions},
+    author={Vincent Sitzmann and Julien N. P. Martel and Alexander W. Bergman and David B. Lindell and Gordon Wetzstein},
+    year={2020},
+    eprint={2006.09661},
+    archivePrefix={arXiv},
+    primaryClass={cs.CV}
+}
+```
