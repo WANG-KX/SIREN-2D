@@ -42,7 +42,7 @@ python 2.7
 }
 
 
-@misc{mildenhall2020nerf,
+@misc{sitzmann2020siren,
     title={Implicit Neural Representations with Periodic Activation Functions},
     author={Vincent Sitzmann and Julien N. P. Martel and Alexander W. Bergman and David B. Lindell and Gordon Wetzstein},
     year={2020},
