@@ -12,6 +12,15 @@ Models are provided in '''models.py'''. Additionally, we provide analytic gradie
 
 The script '''test_image_fitting''' provides such comparision.
 
+Below is the image fit result with 1750 steps. From left to right is the target, relu, relu with position encoding, and siren.
+
+<img src="figs/image_fit_result.png" alt="Image fit result" width = "1085" height = "260">
+
+Below is the intensity error during the fit.
+
+<img src="figs/image_fit_plot.png" alt="Image fit result" width = "320" height = "320">
+
+
 ## Reconstruct via numerical gradient supervision
 
 The script '''test_grad_fitting_numerical''' provides such comparison. During the training, we first inference the image and calculate the numerical gradient using adjacent pixel values. Training loss is calculated by comparing the numerical gradient with the ground truth gradient. Visually, SIREN generates more visually pleasing results.

@@ -1,7 +1,8 @@
+import numpy as np 
 import cv2
+import matplotlib.pyplot as plt
 import torch 
 from torch import nn
-import numpy as np 
 from models import *
 
 SIZE = 256
@@ -43,6 +44,7 @@ parameters += list(siren_model.parameters())
 optimizer = torch.optim.Adam(parameters, lr=1e-4)
 
 loss_log = []
+print("press ESC on any img to quit reconstruction")
 for iter_idx in range(10000):
     relu_recon = relu_model(input_grid)
     relu_pe_recon = relu_pe_model(input_grid)
@@ -72,4 +74,15 @@ for iter_idx in range(10000):
         siren_img = pred2img(siren_recon)
         big_img = np.concatenate([relu_img, relu_pe_img, siren_img], axis=1)
         cv2.imshow("reconstructed img", big_img)
-        cv2.waitKey(10)
+        if cv2.waitKey(10) == 27:
+            break
+
+relu_losses = [i["relu_loss"] for i in loss_log]
+relu_pe_losses = [i["relu_pe_loss"] for i in loss_log]
+siren_losses = [i["siren_loss"] for i in loss_log]
+step_num = len(loss_log)
+plt.plot(range(step_num), relu_losses, label='relu_losses')
+plt.plot(range(step_num), relu_pe_losses, label='relu_pe_losses')
+plt.plot(range(step_num), siren_losses, label='siren_losses')
+plt.legend(loc='upper right')
+plt.show()
